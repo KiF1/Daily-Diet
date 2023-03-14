@@ -1,12 +1,10 @@
 import { ArrowUpRight } from 'phosphor-react-native';
 import { TouchableOpacity } from 'react-native';
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 
 export type StatisticsStyleProps = {
-  inDiet?: boolean;
-  type?: 'primary' | 'secondary'
+  inDiet: boolean;
 }
-
 
 export const Container = styled.View<StatisticsStyleProps>`
   width: 100%;
@@ -29,7 +27,23 @@ export const Expand = styled(TouchableOpacity)`
   align-items: center;
 `
 
-export const Icon = styled(ArrowUpRight).attrs<StatisticsStyleProps>(({theme, type}) => ({
+export const Icon = styled(ArrowUpRight).attrs<StatisticsStyleProps>(({theme, inDiet}) => ({
   size: 24,
-  color: type === 'primary' ? theme.COLORS.GREEN_700 : theme.COLORS.RED_DARK
+  color: inDiet ? theme.COLORS.GREEN_700 : theme.COLORS.RED_DARK
 }))``;
+
+export const Title = styled.Text`
+  ${({theme}) => css`
+    color: ${theme.COLORS.GRAY_100};
+    font-size: ${theme.FONT_SIZE.XL}px;
+    font-family: ${theme.FONT_FAMILY.BOLD};
+  `}
+`;
+
+export const Text = styled.Text`
+  ${({theme}) => css`
+    color: ${theme.COLORS.GRAY_200};
+    font-size: ${theme.FONT_SIZE.SM}px;
+    font-family: ${theme.FONT_FAMILY.REGULAR};
+  `}
+`

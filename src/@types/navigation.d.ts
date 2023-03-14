@@ -5,8 +5,8 @@ export declare global {
       statistics: undefined;
       new: undefined;
       registered: { inDiet: boolean };
-      view: { id: string };
-      edit: { id: string };
+      view: { id: string, date: string };
+      edit: { id: string, date: string };
     }
   }
 }
