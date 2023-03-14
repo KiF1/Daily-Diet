@@ -1,10 +1,12 @@
+export type MealsInDate = {
+    title: string;
+    meals: MealStorageDTO[];
+}
+
 export type MealStorageDTO = {
-    meal: {
-        id: string;
-        name: string;
-        date: string;
-        hour: string;
-        inDiet: boolean;
-    },
+    id: string;
+    name: string;
     date: string;
+    hour: string;
+    inDiet: boolean;
 }
