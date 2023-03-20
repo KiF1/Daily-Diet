@@ -4,6 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import { MealsInDate } from "@storage/Meal/MealStorageDTO";
 import { useState } from "react";
 import { FlatList } from "react-native";
+import { MealList } from "./components/MealList";
 import { Statistics } from "./components/Statistics";
 import { Box, Container, Text } from "./styles";
 
@@ -25,7 +26,7 @@ export function Home(){
         <Button viewIcon title="Nova refeição" onPress={handleNavigation} />
       </Box>
       <FlatList data={meals} keyExtractor={meal => meal.title} renderItem={(meal) => (
-        
+        <MealList key={meal.index} meals={meal}  />
       ) } />
     </Container>
   )

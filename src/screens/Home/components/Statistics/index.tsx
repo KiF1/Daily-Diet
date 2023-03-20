@@ -1,6 +1,6 @@
-import { Container, Expand, Icon, StatisticsStyleProps, Text, Title } from "./styles";
+import { Container, Expand, Icon, DietStyleProps, Text, Title } from "./styles";
 
-export function Statistics({ inDiet }: StatisticsStyleProps){
+export function Statistics({ inDiet }: DietStyleProps){
   return(
     <Container inDiet={inDiet}>
       <Expand><Icon /></Expand>

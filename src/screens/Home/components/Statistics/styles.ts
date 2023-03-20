@@ -2,11 +2,11 @@ import { ArrowUpRight } from 'phosphor-react-native';
 import { TouchableOpacity } from 'react-native';
 import styled, { css } from 'styled-components/native';
 
-export type StatisticsStyleProps = {
+export type DietStyleProps = {
   inDiet: boolean;
 }
 
-export const Container = styled.View<StatisticsStyleProps>`
+export const Container = styled.View<DietStyleProps>`
   width: 100%;
   position: relative;
   align-items: center;
@@ -27,7 +27,7 @@ export const Expand = styled(TouchableOpacity)`
   align-items: center;
 `
 
-export const Icon = styled(ArrowUpRight).attrs<StatisticsStyleProps>(({theme, inDiet}) => ({
+export const Icon = styled(ArrowUpRight).attrs<DietStyleProps>(({theme, inDiet}) => ({
   size: 24,
   color: inDiet ? theme.COLORS.GREEN_700 : theme.COLORS.RED_DARK
 }))``;
